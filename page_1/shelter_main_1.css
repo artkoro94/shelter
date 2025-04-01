@@ -1,11 +1,11 @@
 @font-face {
     font-family: Arial;
-    src: url(assets/fonts/Arial.ttf);
+    src: url(../assets/fonts/Arial.ttf);
 }
 
 @font-face {
     font-family: Georgia;
-    src: url(assets/fonts/Georgia.ttf);
+    src: url(../assets/fonts/Georgia.ttf);
 }
 
 * {
@@ -42,7 +42,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url(assets/bg_start/noise_transparent.png),
+    background: url(../assets/bg_start/noise_transparent.png),
     radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     width: 100%;
     gap: 0 50px;
@@ -436,7 +436,7 @@ a:hover {
 }
 
 .pets_photo {
-    background-image: url(/assets/about_pets_photo.png);
+    background-image: url(../assets/about_pets_photo.png);
     width: 300px;
     height: 408px;
 
@@ -562,7 +562,7 @@ a:hover {
 }
 
 .arrow_left {
-    background-image: url(/assets/arrows_svg/arrow_left.svg);
+    background-image: url(../assets/arrows_svg/arrow_left.svg);
 
     width: 14px;
     height: 6px;
@@ -599,7 +599,7 @@ a:hover {
 }
 
 .arrow_right {
-    background-image: url(/assets/arrows_svg/arrow_right.svg);
+    background-image: url(../assets/arrows_svg/arrow_right.svg);
 
     width: 14px;
     height: 6px;
@@ -666,7 +666,7 @@ a:hover {
 }
 
 .katrine_photo {
-    background-image: url(/assets/cards_main/Katrine.png);
+    background-image: url(../assets/cards_main/Katrine.png);
 
     width: 270px;
     height: 270px;
@@ -751,7 +751,7 @@ a:hover {
 }
 
 .jennifer_photo {
-    background-image: url(/assets/cards_main/Jennifer.png);
+    background-image: url(../assets/cards_main/Jennifer.png);
 
     width: 270px;
     height: 270px;
@@ -836,7 +836,7 @@ a:hover {
 }
 
 .woody_photo {
-    background-image: url(/assets/cards_main/Woody.png);
+    background-image: url(../assets/cards_main/Woody.png);
 
     width: 270px;
     height: 270px;
@@ -978,7 +978,7 @@ a:hover {
 }
 
 .help_img_1 {
-    background-image: url(/assets/help_svg/help_position_1.svg);
+    background-image: url(../assets/help_svg/help_position_1.svg);
     width: 47.86px;
     height: 60px;
 }
@@ -1000,7 +1000,7 @@ a:hover {
 }
 
 .help_img_2 {
-    background-image: url(/assets/help_svg/help_position_2.svg);
+    background-image: url(../assets/help_svg/help_position_2.svg);
     width: 61px;
     height: 60px;
 }
@@ -1022,7 +1022,7 @@ a:hover {
 }
 
 .help_img_3 {
-    background-image: url(/assets/help_svg/help_position_3.svg);
+    background-image: url(../assets/help_svg/help_position_3.svg);
     width: 60px;
     height: 60px;
 }
@@ -1044,7 +1044,7 @@ a:hover {
 }
 
 .help_img_4 {
-    background-image: url(/assets/help_svg/help_position_4.svg);
+    background-image: url(../assets/help_svg/help_position_4.svg);
     width: 60px;
     height: 56.82px;
 }
@@ -1066,7 +1066,7 @@ a:hover {
 }
 
 .help_img_5 {
-    background-image: url(/assets/help_svg/help_position_5.svg);
+    background-image: url(../assets/help_svg/help_position_5.svg);
     width: 33px;
     height: 60px;
 }
@@ -1088,7 +1088,7 @@ a:hover {
 }
 
 .help_img_6 {
-    background-image: url(/assets/help_svg/help_position_6.svg);
+    background-image: url(../assets/help_svg/help_position_6.svg);
     width: 60px;
     height: 54.16px;
 }
@@ -1110,7 +1110,7 @@ a:hover {
 }
 
 .help_img_7 {
-    background-image: url(/assets/help_svg/help_position_7.svg);
+    background-image: url(../assets/help_svg/help_position_7.svg);
     width: 60px;
     height: 60px;
 }
@@ -1132,7 +1132,7 @@ a:hover {
 }
 
 .help_img_8 {
-    background-image: url(/assets/help_svg/help_position_8.svg);
+    background-image: url(../assets/help_svg/help_position_8.svg);
     width: 60px;
     height: 52.43px;
 }
@@ -1154,7 +1154,7 @@ a:hover {
 }
 
 .help_img_9 {
-    background-image: url(/assets/help_svg/help_position_9.svg);
+    background-image: url(../assets/help_svg/help_position_9.svg);
     width: 56.29px;
     height: 60px;
 }
@@ -1275,7 +1275,7 @@ a:hover {
 }
 
 .card_img {
-    background-image: url(/assets/card_svg/credit_card.svg);
+    background-image: url(../assets/card_svg/credit_card.svg);
     width: 30px;
     height: 23px;
 }
@@ -1330,7 +1330,7 @@ a:hover {
 }
 
 .footer_bg {
-    background: url(/assets/bg_footer/noise_transparent_2.png),
+    background: url(../assets/bg_footer/noise_transparent_2.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 
     display: flex;
@@ -1568,7 +1568,7 @@ a:hover {
 }
 
 .pin_img_2 {
-    background-image: url(/sassets/footer_svg/pin_svg.svg);
+    background-image: url(../assets/footer_svg/pin_svg.svg);
 
     width: 22px;
     height: 32px;
