@@ -1132,7 +1132,7 @@ a:hover {
 }
 
 .help_img_8 {
-    background-image: url(assets/help_svg/help_position_8.svg);
+    background-image: url(../assets/help_svg/help_position_8.svg);
     width: 60px;
     height: 52.43px;
 }
@@ -1154,7 +1154,7 @@ a:hover {
 }
 
 .help_img_9 {
-    background-image: url(assets/help_svg/help_position_9.svg);
+    background-image: url(../assets/help_svg/help_position_9.svg);
     width: 56.29px;
     height: 60px;
 }
