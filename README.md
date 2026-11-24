@@ -1,6 +1,6 @@
 # Cozy House — Pet Shelter
 
-A responsive fictional animal-shelter website. The project is localized for Russian-speaking visitors, with English as an additional language.
+A responsive fictional animal-shelter website with Russian as the default language and English as an additional option.
 
 ## Stack
 
@@ -17,6 +17,26 @@ A responsive fictional animal-shelter website. The project is localized for Russ
 - Accessible mobile navigation
 - Featured pets slider
 - Reduced-motion support
+
+## Project structure
+
+```text
+src/
+  main.ts
+  i18n.ts
+  styles.css
+  modules/
+    navigation.ts
+    featured-slider.ts
+page_1/                 # Legacy home-page styles
+page_2/                 # Legacy catalog styles and markup
+assets/                 # Images, icons and illustrations
+shelter_main_1.html     # Home page
+page_2/shelter_main_2.html
+index.html              # GitHub Pages entry point
+```
+
+The TypeScript entry point initializes small, page-aware modules. Each module checks that its target elements exist, so the home-page slider does not run on the catalog page.
 
 ## Getting started
 
