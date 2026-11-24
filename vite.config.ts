@@ -6,6 +6,7 @@ export default defineConfig({
     target: 'es2022',
     rollupOptions: {
       input: {
+        home: 'index.html',
         main: 'shelter_main_1.html',
         pets: 'page_2/shelter_main_2.html',
       },
