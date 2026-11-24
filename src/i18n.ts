@@ -3,6 +3,7 @@ type Locale = 'ru' | 'en';
 const translations: Record<Locale, Record<string, string>> = {
   ru: {
     'nav.home': 'Главная',
+    'brand.tagline': 'Приют для животных в Бостоне',
     'nav.about': 'О приюте',
     'nav.pets': 'Наши питомцы',
     'nav.help': 'Как помочь',
@@ -41,6 +42,7 @@ const translations: Record<Locale, Record<string, string>> = {
   },
   en: {
     'nav.home': 'Home',
+    'brand.tagline': 'Pet shelter in Boston',
     'nav.about': 'About the shelter',
     'nav.pets': 'Our pets',
     'nav.help': 'Help the shelter',
