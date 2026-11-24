@@ -9,7 +9,12 @@ export function initMobileNavigation(): void {
     menu.classList.toggle('active', open);
     document.body.classList.toggle('no-scroll', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    const locale = document.documentElement.lang === 'en' ? 'en' : 'ru';
+    const labels = {
+      en: { open: 'Open navigation menu', close: 'Close navigation menu' },
+      ru: { open: 'Открыть меню навигации', close: 'Закрыть меню навигации' },
+    };
+    toggle.setAttribute('aria-label', labels[locale][open ? 'close' : 'open']);
     menu.setAttribute('aria-hidden', String(!open));
   };
 
