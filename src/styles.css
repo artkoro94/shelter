@@ -252,3 +252,25 @@ body > header:not(.header_bg) { background: var(--surface-raised); border-bottom
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Pet details dialog */
+.pet-dialog { width: min(760px, calc(100% - 32px)); max-width: 760px; max-height: min(88vh, 760px); padding: 0; overflow: auto; border: 1px solid var(--line); border-radius: 24px; background: var(--surface-raised); color: var(--ink); box-shadow: 0 28px 100px rgb(0 0 0 / 32%); }
+.pet-dialog::backdrop { background: rgb(13 24 18 / 68%); backdrop-filter: blur(5px); }
+.pet-dialog__panel { position: relative; display: grid; grid-template-columns: minmax(220px, .9fr) minmax(0, 1.1fr); min-height: 340px; }
+.pet-dialog__image { width: 100%; height: 100%; min-height: 340px; object-fit: cover; background: var(--surface); }
+.pet-dialog__image[hidden] { display: none; }
+.pet-dialog__panel:has(.pet-dialog__image[hidden]) { grid-template-columns: 1fr; }
+.pet-dialog__content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 42px; }
+.pet-dialog__close { position: absolute; z-index: 1; top: 14px; right: 14px; display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-raised); color: var(--ink); cursor: pointer; font-size: 25px; line-height: 1; transition: transform .2s, background .2s; }
+.pet-dialog__close:hover { transform: rotate(90deg); background: var(--clay-soft); }
+.pet-dialog__eyebrow { margin-bottom: 12px; color: var(--clay); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.pet-dialog__content h2 { margin-bottom: 16px; font-size: clamp(30px, 4vw, 42px); }
+.pet-dialog__description { margin-bottom: 24px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.pet-dialog__contact { display: inline-flex; min-height: 46px; align-items: center; padding: 0 20px; border-radius: 999px; background: var(--clay); color: #241f1a; font-size: 13px; font-weight: 800; transition: transform .2s, background .2s; }
+.pet-dialog__contact:hover { transform: translateY(-2px); background: #e88d69; }
+@media (max-width: 620px) {
+  .pet-dialog__panel { grid-template-columns: 1fr; }
+  .pet-dialog__image { height: auto; max-height: 280px; min-height: 0; aspect-ratio: 1.2 / 1; }
+  .pet-dialog__content { padding: 28px 24px 30px; }
+}
