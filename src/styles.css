@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --color-page: #ffffff;
+  --color-surface: #f6f6f6;
+  --color-card: #fafafa;
+  --color-text: #545454;
+  --color-text-strong: #292929;
+  --color-muted: #6c6c6c;
+  --color-accent: #f1cdb3;
+  --color-accent-hover: #fddcc4;
+  --color-border: #d6d6d6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-page: #202124;
+  --color-surface: #292a2d;
+  --color-card: #333438;
+  --color-text: #e2e2e2;
+  --color-text-strong: #ffffff;
+  --color-muted: #b8b8b8;
+  --color-accent: #d8ad91;
+  --color-accent-hover: #edc3a5;
+  --color-border: #55565a;
+}
+
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { min-width: 320px; margin: 0; background: var(--color-page); color: var(--color-text); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+
+.preference_controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.preference_controls button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+}
+.preference_controls button[aria-pressed='true'] { border-color: var(--color-accent); background: var(--color-accent); color: #292929; }
+body, .main_container, .card, .about, .help, .donation { transition: background-color .2s ease, color .2s ease; }
+.main_container, .about, .help, .donation { background-color: var(--color-page); }
+.main_container { background-color: var(--color-surface); }
+.card { background-color: var(--color-card); }
+.title_card, .pets_title, .about_p, .help_word { color: var(--color-text); }
+.card_button { background-color: var(--color-card); }
+@media (max-width: 900px) {
+  .header_container { width: min(100% - 40px, 1200px); gap: 14px; }
+  .preference_controls { margin-left: 0; }
+}
+@media (max-width: 768px) {
+  .header_container { width: min(100% - 32px, 1200px); }
+  .preference_controls { position: absolute; top: 94px; right: 24px; z-index: 5; }
+  .mobile_menu { padding-top: 70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
