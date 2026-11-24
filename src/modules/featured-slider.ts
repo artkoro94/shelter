@@ -37,7 +37,8 @@ export function initFeaturedSlider(): void {
   });
 
   next.addEventListener('click', () => {
-    index = Math.min(cards.length - getVisibleCount(), index + 1);
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    index = Math.min(maxIndex, index + 1);
     render();
   });
 
