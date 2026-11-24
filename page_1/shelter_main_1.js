@@ -1,97 +1,107 @@
-// Burger Menu
+(() => {
+  "use strict";
 
-document.querySelector(".burger_menu").addEventListener("click", function () {
-  this.classList.toggle("active");
-});
+  const burger = document.querySelector("#burger");
+  const mobileMenu = document.querySelector("#menu");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const burger = document.getElementById("burger");
-  const menu = document.getElementById("menu");
-  const body = document.body;
+  const setMenuState = (isOpen) => {
+    if (!burger || !mobileMenu) return;
 
-  burger.addEventListener("click", function () {
-      burger.classList.toggle("active");
-      menu.classList.toggle("active");
-      body.classList.toggle("no-scroll"); // Блокируем/разблокируем скролл
-  });
+    burger.classList.toggle("active", isOpen);
+    mobileMenu.classList.toggle("active", isOpen);
+    document.body.classList.toggle("no-scroll", isOpen);
+    burger.setAttribute("aria-expanded", String(isOpen));
+    mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+  };
 
-  // Закрытие меню при клике на ссылку
-  document.querySelectorAll(".mobile_menu a").forEach(link => {
-      link.addEventListener("click", () => {
-          burger.classList.remove("active");
-          menu.classList.remove("active");
-          body.classList.remove("no-scroll"); // Убираем блокировку скролла
-      });
-  });
-});
+  if (burger && mobileMenu) {
+    burger.setAttribute("aria-controls", "menu");
+    burger.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
 
-// Slider with Infinite Loop and Corrected Movement
+    burger.addEventListener("click", () => {
+      setMenuState(!mobileMenu.classList.contains("active"));
+    });
 
-const leftBtn = document.getElementById('left-btn');
-const rightBtn = document.getElementById('right-btn');
-const cards = document.getElementById('friend-cards');
-let currentIndex = 0;
-const cardWidth = 300;
-const totalCards = cards.children.length;
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMenuState(false));
+    });
 
-function updateSlider() {
-    cards.style.transition = 'transform 0.5s ease';
-    cards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenuState(false);
+    });
 
-function updateSlide2() {
-    cards.style.transition = 'transform 0.5s ease';
-    cards.style.transform = `translateX(+${currentIndex * cardWidth}px)`;
-}
+    document.addEventListener("click", (event) => {
+      if (
+        mobileMenu.classList.contains("active") &&
+        !mobileMenu.contains(event.target) &&
+        !burger.contains(event.target)
+      ) {
+        setMenuState(false);
+      }
+    });
+  }
 
-rightBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalCards;
+  const track = document.querySelector("#friend-cards");
+  const previousButton = document.querySelector("#left-btn");
+  const nextButton = document.querySelector("#right-btn");
+
+  if (!track || !previousButton || !nextButton) return;
+
+  const cards = Array.from(track.children);
+  let currentIndex = 0;
+
+  const getVisibleCount = () => {
+    if (window.matchMedia("(max-width: 620px)").matches) return 1;
+    if (window.matchMedia("(max-width: 850px)").matches) return 2;
+    return 3;
+  };
+
+  const getStep = () => {
+    const firstCard = cards[0];
+    if (!firstCard) return 0;
+
+    const gap = Number.parseFloat(window.getComputedStyle(track).columnGap) || 0;
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  const updateSlider = () => {
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    currentIndex = Math.min(currentIndex, maxIndex);
+
+    track.style.transform = `translateX(-${currentIndex * getStep()}px)`;
+    previousButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === maxIndex;
+  };
+
+  previousButton.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
     updateSlider();
-});
+  });
 
-leftBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 2 + totalCards) % totalCards;
-    updateSlide2();
-});
+  nextButton.addEventListener("click", () => {
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    currentIndex = Math.min(maxIndex, currentIndex + 1);
+    updateSlider();
+  });
 
-// Swipe
+  let touchStartX = 0;
 
-const container = document.querySelector('.friend_cards');
-const items = document.querySelectorAll('.swipe-item');
+  track.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
 
-let startX = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let isDragging = false;
-let gap = 120;
-let itemWidth = 290;
+  track.addEventListener("touchend", (event) => {
+    const difference = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(difference) < 40) return;
 
-function getSlideWidth() {
-  return itemWidth + gap;
-}
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    currentIndex = difference < 0
+      ? Math.min(maxIndex, currentIndex + 1)
+      : Math.max(0, currentIndex - 1);
+    updateSlider();
+  }, { passive: true });
 
-container.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-  isDragging = true;
-});
-
-container.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
-  const currentX = e.touches[0].clientX;
-  const diff = currentX - startX;
-  currentTranslate = prevTranslate + diff;
-  container.style.transform = `translateX(${currentTranslate}px)`;
-});
-
-container.addEventListener('touchend', () => {
-  isDragging = false;
-  const slideWidth = getSlideWidth();
-  const currentSlide = Math.round(-currentTranslate / slideWidth);
-  currentTranslate = -currentSlide * slideWidth;
-  prevTranslate = currentTranslate;
-  container.style.transition = 'transform 0.3s ease';
-  container.style.transform = `translateX(${currentTranslate}px)`;
-  setTimeout(() => {
-    container.style.transition = '';
-  }, 300);
-});
+  window.addEventListener("resize", updateSlider);
+  updateSlider();
+})();

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shelter</title>
+    <meta name="description" content="Meet the animals and learn how you can help Cozy House pet shelter.">
+    <meta name="theme-color" content="#262425">
+    <title>Cozy House — Pet Shelter</title>
     <link rel="stylesheet" href="page_1/shelter_main_1.css">
     <link rel="icon" type="image/ico" href="assets/ico/paw_ico.ico">
 </head>
@@ -13,11 +15,9 @@
     <header class="header_bg">
 
       <div class="header_container">
-        <a href="#">
-        <div class="logo">
-          <h1 class="logo_1">Cozy House</h1>
-          <p class="logo_2">Shelter for pets in Boston</p>
-        </div>
+        <a class="logo" href="shelter_main_1.html" aria-label="Cozy House home">
+          <span class="logo_1">Cozy House</span>
+          <span class="logo_2">Shelter for pets in Boston</span>
         </a>
 
         <nav class="nav_menu">
@@ -29,19 +29,21 @@
           </ul>
         </nav>
 
-        <button class="burger_menu" id="burger">
+        <button class="burger_menu" id="burger" type="button" aria-label="Open navigation menu">
           <span class="button_stripe"></span>
           <span class="button_stripe"></span>
           <span class="button_stripe"></span>
         </button>
 
-        <nav class="mobile_menu" id="menu">
+        <nav class="mobile_menu" id="menu" aria-label="Mobile navigation">
           <ul>
-              <li><a href="#">Main</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Contacts</a></li>
+            <li><a href="shelter_main_1.html">Main</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="page_2/shelter_main_2.html">Our pets</a></li>
+            <li><a href="#help">Help the shelter</a></li>
+            <li><a href="#contacts_footer">Contacts</a></li>
           </ul>
-      </nav>
+        </nav>
         
       </div>
 
@@ -64,9 +66,9 @@
 
     <main>
 
-      <section class="about">
+      <section class="about" id="about">
         <div class="about_block">
-          <div class="pets_photo"></div>
+          <div class="pets_photo" role="img" aria-label="A cat and a dog waiting for a family"></div>
           <div class="about_text">
             <h2 class="about_h2">About the shelter “Cozy House”</h2>
             <p class="about_p">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
@@ -104,9 +106,7 @@
           </div>
           <button class="friends_button_right" id="right-btn"><span class="arrow_right"></span></button>
         </div>
-        <form action="page_2/shelter_main_2.html">
-          <button class="cards_button" id="right-btn"><span class="cards_button_text">Get to know the rest</span></button>
-        </form>
+        <a class="cards_button" href="page_2/shelter_main_2.html"><span class="cards_button_text">Get to know the rest</span></a>
       </section>
 
 
@@ -128,14 +128,14 @@
 
       <section class="donation">
         <div class="donation_content">
-          <img src="assets/donation_dog.png" alt="donation_dog_img" class="donation_dog_img"></img>
+          <img src="assets/donation_dog.png" alt="Dog resting beside a donation bowl" class="donation_dog_img" loading="lazy">
           <div class="donation_info">
             <h2 class="donation_title">You can also make a donation</h2>
             <p class="donation_subtitle">Name of the bank / Type of bank account</p>
             <div class="donation_card_info">
               <div class="donation_card_info2">
                 <div class="card_img"></div>
-                <a href=""><div class="card_number">xxx xxx xxx xxx 1234</div></a>
+                <span class="card_number">xxx xxx xxx xxx 1234</span>
               </div>
             </div>
             <p class="legal_info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
@@ -153,7 +153,7 @@
           <div class="contacts_block">
             <h3 class="contacts_title">For questions and suggestions</h3>
 
-            <a href="https://www.google.com/intl/ru/gmail/about/">
+            <a href="mailto:email@shelter.com">
             <div class="mail_block">
               <img src="assets/footer_svg/mail_svg.svg" width="40" height="26" alt="mail">
               <span class="mail_text">email@shelter.com</span>
@@ -172,14 +172,14 @@
           <div class="location_block">
             <h3 class="visit_title">We are waiting for your visit</h3>
 
-            <a href="https://maps.app.goo.gl/k8AnCoyEEJuYcySH9" target="_blank">
+            <a href="https://maps.app.goo.gl/k8AnCoyEEJuYcySH9" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_1">
               <img src="assets/footer_svg/pin_svg.svg" width="22" height="32" alt="pin">
               <span class="pin_text_1">1 Central Street, Boston (entrance from the store)</span>
             </div>
             </a>
 
-            <a href="https://maps.app.goo.gl/y2pSQEs3csRpVwq26" target="_blank">
+            <a href="https://maps.app.goo.gl/y2pSQEs3csRpVwq26" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_2">
               <img src="assets/footer_svg/pin_svg.svg" width="22" height="32" alt="pin">
               <span class="pin_text_2">18 South Park, London</span>
@@ -193,7 +193,7 @@
       </div>
 
     </footer>
-    <script src="page_1/shelter_main_1.js"></script>
+    <script src="page_1/shelter_main_1.js" defer></script>
 
   </body>
   
