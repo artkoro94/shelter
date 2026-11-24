@@ -98,3 +98,15 @@ body, .main_container, .card, .about, .help, .donation { transition: background-
   .preference_controls { gap: 5px; }
   .preference_controls button { min-height: 32px; padding: 5px 8px; }
 }
+
+:root[data-theme='dark'] .friends,
+:root[data-theme='dark'] .about,
+:root[data-theme='dark'] .help,
+:root[data-theme='dark'] .donation,
+:root[data-theme='dark'] .main_container { background-color: var(--color-surface); }
+:root[data-theme='dark'] .friends_h2,
+:root[data-theme='dark'] .donation_title,
+:root[data-theme='dark'] .donation_subtitle { color: var(--color-text); }
+:root[data-theme='dark'] .friends .card_1,
+:root[data-theme='dark'] .friends .card_2,
+:root[data-theme='dark'] .friends .card_3 { background-color: var(--color-card); }
