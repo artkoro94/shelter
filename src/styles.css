@@ -70,3 +70,31 @@ body, .main_container, .card, .about, .help, .donation { transition: background-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+:root[data-theme='dark'] body,
+:root[data-theme='dark'] .main_container,
+:root[data-theme='dark'] .about,
+:root[data-theme='dark'] .help,
+:root[data-theme='dark'] .donation,
+:root[data-theme='dark'] header:not(.header_bg) { background-color: var(--color-page); }
+:root[data-theme='dark'] .main_container { background-color: var(--color-surface); }
+:root[data-theme='dark'] .card,
+:root[data-theme='dark'] .card_button { background-color: var(--color-card); }
+:root[data-theme='dark'] .card:hover { background-color: #3b3c40; }
+:root[data-theme='dark'] .title_card,
+:root[data-theme='dark'] .pets_title,
+:root[data-theme='dark'] .about_h2,
+:root[data-theme='dark'] .about_p,
+:root[data-theme='dark'] .friends_h2,
+:root[data-theme='dark'] .help_h2,
+:root[data-theme='dark'] .help_word,
+:root[data-theme='dark'] .donation_title,
+:root[data-theme='dark'] .donation_subtitle,
+:root[data-theme='dark'] .legal_info { color: var(--color-text); }
+:root[data-theme='dark'] .header_container .logo_1,
+:root[data-theme='dark'] .header_container .logo_2 { color: var(--color-text-strong); }
+:root[data-theme='dark'] .ul_header a { color: var(--color-text); }
+:root[data-theme='dark'] .button_stripe { background: var(--color-text-strong); border-color: var(--color-text-strong); }
+@media (max-width: 768px) {
+  .preference_controls { gap: 5px; }
+  .preference_controls button { min-height: 32px; padding: 5px 8px; }
+}
