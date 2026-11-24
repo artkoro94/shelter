@@ -75,9 +75,17 @@ export function initPetDialog(): void {
       const locale = document.documentElement.lang === 'en' ? 'en' : 'ru';
       const text = copy[locale];
 
-      image.src = cardImage?.src ?? '';
+      const featuredImages: Record<string, string> = {
+        card_1: new URL('../../assets/cards_main/Katrine.png', import.meta.url).href,
+        card_2: new URL('../../assets/cards_main/Jennifer.png', import.meta.url).href,
+        card_3: new URL('../../assets/cards_main/Woody.png', import.meta.url).href,
+      };
+      const featuredClass = ['card_1', 'card_2', 'card_3'].find((className) => card.classList.contains(className));
+      const source = cardImage?.src ?? (featuredClass ? featuredImages[featuredClass] : '');
+      if (source) image.src = source;
+      else image.removeAttribute('src');
       image.alt = name;
-      image.hidden = !image.src;
+      image.hidden = !source;
       eyebrow.textContent = text.eyebrow;
       title.textContent = name;
       description.textContent = text.description;
