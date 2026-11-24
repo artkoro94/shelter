@@ -42,6 +42,20 @@ export function initFeaturedSlider(): void {
     render();
   });
 
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (event: TouchEvent) => {
+    touchStartX = event.changedTouches[0]?.clientX ?? 0;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (event: TouchEvent) => {
+    const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+    const distance = touchEndX - touchStartX;
+    if (Math.abs(distance) < 45) return;
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    index = distance < 0 ? Math.min(maxIndex, index + 1) : Math.max(0, index - 1);
+    render();
+  }, { passive: true });
+
   const breakpoints = [
     window.matchMedia('(max-width: 620px)'),
     window.matchMedia('(max-width: 850px)'),
