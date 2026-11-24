@@ -110,3 +110,23 @@ body, .main_container, .card, .about, .help, .donation { transition: background-
 :root[data-theme='dark'] .friends .card_1,
 :root[data-theme='dark'] .friends .card_2,
 :root[data-theme='dark'] .friends .card_3 { background-color: var(--color-card); }
+
+:root[data-theme='dark'] .navigation_pets button,
+:root[data-theme='dark'] .navigation_pets .page_number {
+  background-color: var(--color-card);
+  border-color: var(--color-border);
+}
+:root[data-theme='dark'] .navigation_pets .page_number {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+:root[data-theme='dark'] .navigation_pets .number_text,
+:root[data-theme='dark'] .navigation_pets .arrows_r_x1,
+:root[data-theme='dark'] .navigation_pets .arrows_r_x2 {
+  color: #292929;
+}
+:root[data-theme='dark'] .navigation_pets .arrows_l_x1,
+:root[data-theme='dark'] .navigation_pets .arrows_l_x2 {
+  color: var(--color-muted);
+}
+:root[data-theme='dark'] .card_button { border-color: var(--color-accent); }
