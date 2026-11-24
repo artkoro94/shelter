@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +17,23 @@
       <div class="header_container">
         <a class="logo" href="shelter_main_1.html" aria-label="Cozy House home">
           <span class="logo_1">Cozy House</span>
-          <span class="logo_2">Shelter for pets in Boston</span>
+          <span class="logo_2" data-i18n="brand.tagline">Shelter for pets in Boston</span>
         </a>
 
         <nav class="nav_menu">
           <ul class="ul_header">
-            <li class="li_item_1"><a href="#about">About the shelter</a></li>
-            <li><a href="page_2/shelter_main_2.html">Our pets</a></li>
-            <li><a href="#help">Help the shelter</a></li>
-            <li><a href="#contacts_footer">Contacts</a></li>
+            <li class="li_item_1"><a href="#about" data-i18n="nav.about">About the shelter</a></li>
+            <li><a href="page_2/shelter_main_2.html" data-i18n="nav.pets">Our pets</a></li>
+            <li><a href="#help" data-i18n="nav.help">Help the shelter</a></li>
+            <li><a href="#contacts_footer" data-i18n="nav.contacts">Contacts</a></li>
           </ul>
         </nav>
 
+        <div class="preference_controls" aria-label="Настройки отображения">
+          <button type="button" data-locale="ru" aria-pressed="true">RU</button>
+          <button type="button" data-locale="en" aria-pressed="false">EN</button>
+          <button type="button" data-theme-toggle aria-label="Тёмная тема" aria-pressed="false">◐</button>
+        </div>
         <button class="burger_menu" id="burger" type="button" aria-label="Open navigation menu">
           <span class="button_stripe"></span>
           <span class="button_stripe"></span>
@@ -37,11 +42,11 @@
 
         <nav class="mobile_menu" id="menu" aria-label="Mobile navigation">
           <ul>
-            <li><a href="shelter_main_1.html">Main</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="page_2/shelter_main_2.html">Our pets</a></li>
-            <li><a href="#help">Help the shelter</a></li>
-            <li><a href="#contacts_footer">Contacts</a></li>
+            <li><a href="shelter_main_1.html" data-i18n="nav.home">Main</a></li>
+            <li><a href="#about" data-i18n="nav.about">About us</a></li>
+            <li><a href="page_2/shelter_main_2.html" data-i18n="nav.pets">Our pets</a></li>
+            <li><a href="#help" data-i18n="nav.help">Help the shelter</a></li>
+            <li><a href="#contacts_footer" data-i18n="nav.contacts">Contacts</a></li>
           </ul>
         </nav>
         
@@ -49,11 +54,11 @@
 
       <section class="not_only">
         <div class="not_only_review">
-          <h2 class="not_only_h2">Not only people need a house</h2>
-          <p class="not_only_content">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+          <h2 class="not_only_h2" data-i18n="hero.title">Not only people need a house</h2>
+          <p class="not_only_content" data-i18n="hero.text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
             <form action="#friends" class="a_friends">
             <button class="not_only_button">
-              <span class="not_only_button_text">Make a friend</span>
+              <span class="not_only_button_text" data-i18n="hero.cta">Make a friend</span>
             </button>
             </form>
         </div>
@@ -70,15 +75,15 @@
         <div class="about_block">
           <div class="pets_photo" role="img" aria-label="A cat and a dog waiting for a family"></div>
           <div class="about_text">
-            <h2 class="about_h2">About the shelter “Cozy House”</h2>
-            <p class="about_p">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
-            <p class="about_p">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+            <h2 class="about_h2" data-i18n="about.title">About the shelter “Cozy House”</h2>
+            <p class="about_p" data-i18n="about.p1">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+            <p class="about_p" data-i18n="about.p2">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
           </div>
         </div>
       </section>
 
       <section class="friends" id="friends">
-        <h2 class="friends_h2">Our friends who are looking for a house</h2>
+        <h2 class="friends_h2" data-i18n="friends.title">Our friends who are looking for a house</h2>
         <div class="friends_slider">
           <button class="friends_button_left" id="left-btn"><span class="arrow_left"></span></button>
           <div class="cards_overflow">
@@ -87,42 +92,42 @@
             <div class="card_1">
               <div class="katrine_photo"></div>
               <p class="katrine_name">Katrine</p>
-              <button class="katrine_button"><span class="button_text">Learn more</span></button>
+              <button class="katrine_button"><span class="button_text" data-i18n="pet.more">Learn more</span></button>
             </div>
 
             <div class="card_2">
               <div class="jennifer_photo"></div>
               <p class="jennifer_name">Jennifer</p>
-              <button class="jennifer_button"><span class="button_text_2">Learn more</span></button>
+              <button class="jennifer_button"><span class="button_text_2" data-i18n="pet.more">Learn more</span></button>
             </div>
 
             <div class="card_3">
               <div class="woody_photo"></div>
               <p class="woody_name">Woody</p>
-              <button class="woody_button"><span class="button_text_3">Learn more</span></button>
+              <button class="woody_button"><span class="button_text_3" data-i18n="pet.more">Learn more</span></button>
             </div>
 
           </div>
           </div>
           <button class="friends_button_right" id="right-btn"><span class="arrow_right"></span></button>
         </div>
-        <a class="cards_button" href="page_2/shelter_main_2.html"><span class="cards_button_text">Get to know the rest</span></a>
+        <a class="cards_button" href="page_2/shelter_main_2.html"><span class="cards_button_text" data-i18n="friends.more">Get to know the rest</span></a>
       </section>
 
 
       <section class="help">
         <a id="help"></a>
-        <h2 class="help_h2">How you can help our shelter</h2>
+        <h2 class="help_h2" data-i18n="help.title">How you can help our shelter</h2>
         <div class="help_grid">
-          <div class="help_position_2"><div class="help_img_1"></div><p class="help_word">Pet food</p></div>
-          <div class="help_position_2"><div class="help_img_2"></div><p class="help_word">Transportation</p></div>
-          <div class="help_position_2"><div class="help_img_3"></div><p class="help_word">Toys</p></div>
-          <div class="help_position_2"><div class="help_img_4"></div><p class="help_word">Bowls and cups</p></div>
-          <div class="help_position_2"><div class="help_img_5"></div><p class="help_word">Shampoos</p></div>
-          <div class="help_position_2"><div class="help_img_6"></div><p class="help_word">Vitamins</p></div>
-          <div class="help_position_2"><div class="help_img_7"></div><p class="help_word">Medicines</p></div>
-          <div class="help_position_2"><div class="help_img_8"></div><p class="help_word">Collars / leashes</p></div>
-          <div class="help_position_2"><div class="help_img_9"></div><p class="help_word">Sleeping areas</p></div>
+          <div class="help_position_2"><div class="help_img_1"></div><p class="help_word" data-i18n="help.food">Pet food</p></div>
+          <div class="help_position_2"><div class="help_img_2"></div><p class="help_word" data-i18n="help.transport">Transportation</p></div>
+          <div class="help_position_2"><div class="help_img_3"></div><p class="help_word" data-i18n="help.toys">Toys</p></div>
+          <div class="help_position_2"><div class="help_img_4"></div><p class="help_word" data-i18n="help.bowls">Bowls and cups</p></div>
+          <div class="help_position_2"><div class="help_img_5"></div><p class="help_word" data-i18n="help.shampoo">Shampoos</p></div>
+          <div class="help_position_2"><div class="help_img_6"></div><p class="help_word" data-i18n="help.vitamins">Vitamins</p></div>
+          <div class="help_position_2"><div class="help_img_7"></div><p class="help_word" data-i18n="help.medicine">Medicines</p></div>
+          <div class="help_position_2"><div class="help_img_8"></div><p class="help_word" data-i18n="help.collars">Collars / leashes</p></div>
+          <div class="help_position_2"><div class="help_img_9"></div><p class="help_word" data-i18n="help.beds">Sleeping areas</p></div>
         </div>
       </section>
 
@@ -130,8 +135,8 @@
         <div class="donation_content">
           <img src="assets/donation_dog.png" alt="Dog resting beside a donation bowl" class="donation_dog_img" loading="lazy">
           <div class="donation_info">
-            <h2 class="donation_title">You can also make a donation</h2>
-            <p class="donation_subtitle">Name of the bank / Type of bank account</p>
+            <h2 class="donation_title" data-i18n="donation.title">You can also make a donation</h2>
+            <p class="donation_subtitle" data-i18n="donation.bank">Name of the bank / Type of bank account</p>
             <div class="donation_card_info">
               <div class="donation_card_info2">
                 <div class="card_img"></div>
@@ -151,7 +156,7 @@
 
         <div class="contacts_info">
           <div class="contacts_block">
-            <h3 class="contacts_title">For questions and suggestions</h3>
+            <h3 class="contacts_title" data-i18n="footer.questions">For questions and suggestions</h3>
 
             <a href="mailto:email@shelter.com">
             <div class="mail_block">
@@ -170,19 +175,19 @@
           </div>
           
           <div class="location_block">
-            <h3 class="visit_title">We are waiting for your visit</h3>
+            <h3 class="visit_title" data-i18n="footer.visit">We are waiting for your visit</h3>
 
             <a href="https://maps.app.goo.gl/k8AnCoyEEJuYcySH9" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_1">
               <img src="assets/footer_svg/pin_svg.svg" width="22" height="32" alt="pin">
-              <span class="pin_text_1">1 Central Street, Boston (entrance from the store)</span>
+              <span class="pin_text_1" data-i18n="footer.address1">1 Central Street, Boston (entrance from the store)</span>
             </div>
             </a>
 
             <a href="https://maps.app.goo.gl/y2pSQEs3csRpVwq26" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_2">
               <img src="assets/footer_svg/pin_svg.svg" width="22" height="32" alt="pin">
-              <span class="pin_text_2">18 South Park, London</span>
+              <span class="pin_text_2" data-i18n="footer.address2">18 South Park, London</span>
             </div>
             </a>
           </div>
@@ -193,7 +198,7 @@
       </div>
 
     </footer>
-    <script src="page_1/shelter_main_1.js" defer></script>
+    <script type="module" src="/src/main.ts"></script>
 
   </body>
   

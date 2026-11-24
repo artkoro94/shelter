@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +14,24 @@
       <div class="header_container">
         <a class="logo" href="../shelter_main_1.html" aria-label="Cozy House home">
           <span class="logo_1">Cozy House</span>
-          <span class="logo_2">Shelter for pets in Boston</span>
+          <span class="logo_2" data-i18n="brand.tagline">Shelter for pets in Boston</span>
         </a>
 
         <nav class="nav_menu" aria-label="Main navigation">
           <ul class="ul_header">
-            <li><a href="../shelter_main_1.html#about">About the shelter</a></li>
-            <li class="li_item_2" aria-current="page">Our pets</li>
-            <li><a href="../shelter_main_1.html#help">Help the shelter</a></li>
-            <li><a href="#contacts_footer">Contacts</a></li>
+            <li><a href="../shelter_main_1.html#about" data-i18n="nav.about">About the shelter</a></li>
+            <li class="li_item_2" aria-current="page" data-i18n="nav.pets">Our pets</li>
+            <li><a href="shelter_main_2.html" data-i18n="nav.pets">Our pets</a></li>
+            <li><a href="../shelter_main_1.html#help" data-i18n="nav.help">Help the shelter</a></li>
+            <li><a href="#contacts_footer" data-i18n="nav.contacts">Contacts</a></li>
           </ul>
         </nav>
 
+        <div class="preference_controls" aria-label="Настройки отображения">
+          <button type="button" data-locale="ru" aria-pressed="true">RU</button>
+          <button type="button" data-locale="en" aria-pressed="false">EN</button>
+          <button type="button" data-theme-toggle aria-label="Тёмная тема" aria-pressed="false">◐</button>
+        </div>
         <button class="burger_menu" id="burger" type="button" aria-label="Open navigation menu">
           <span class="button_stripe"></span>
           <span class="button_stripe"></span>
@@ -34,62 +40,62 @@
 
         <nav class="mobile_menu" id="menu" aria-label="Mobile navigation">
           <ul>
-            <li><a href="../shelter_main_1.html">Main</a></li>
-            <li><a href="../shelter_main_1.html#about">About us</a></li>
-            <li><a href="../shelter_main_1.html#help">Help the shelter</a></li>
-            <li><a href="#contacts_footer">Contacts</a></li>
+            <li><a href="../shelter_main_1.html" data-i18n="nav.home">Main</a></li>
+            <li><a href="../shelter_main_1.html#about" data-i18n="nav.about">About the shelter</a></li>
+            <li><a href="../shelter_main_1.html#help" data-i18n="nav.help">Help the shelter</a></li>
+            <li><a href="#contacts_footer" data-i18n="nav.contacts">Contacts</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main class="main_container">
-      <h1 class="pets_title">Our friends who <br> are looking for a house</h1>
+      <h1 class="pets_title" data-i18n="catalog.title">Our friends who <br> are looking for a house</h1>
 
       <div class="cards_container">
         <article class="card">
           <img src="../assets/page_2/cards/Katrine_card.png" alt="Katrine the cat" width="270" height="270" loading="lazy">
           <h2 class="title_card">Katrine</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Jennifer_card.png" alt="Jennifer the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Jennifer</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Woody_card.png" alt="Woody the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Woody</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/sophia_card.png" alt="Sophia the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Sophia</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Timmy_card.png" alt="Timmy the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Timmy</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Charly_card.png" alt="Charly the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Charly</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Scarlet_card.png" alt="Scarlett the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Scarlett</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
         <article class="card">
           <img src="../assets/page_2/cards/Freddie_card.png" alt="Freddie the dog" width="270" height="270" loading="lazy">
           <h2 class="title_card">Freddie</h2>
-          <button class="card_button" type="button"><span class="card_name">Learn more</span></button>
+          <button class="card_button" type="button"><span class="card_name" data-i18n="pet.more">Learn more</span></button>
         </article>
       </div>
 
-      <nav class="navigation_pets" aria-label="Pets catalog pagination">
+      <nav class="navigation_pets" aria-label="Pets catalog pagination" data-i18n-aria="catalog.pagination">
         <button class="button_l_x2" type="button" aria-label="First page" disabled><span class="arrows_l_x2">&lt;&lt;</span></button>
         <button class="button_l_x1" type="button" aria-label="Previous page" disabled><span class="arrows_l_x1">&lt;</span></button>
         <div class="page_number" aria-current="page"><span class="number_text">1</span></div>
@@ -101,7 +107,7 @@
     <footer class="footer_bg">
       <div class="footer_container">
         <div class="contacts_block">
-          <h2 class="contacts_title">For questions and suggestions</h2>
+          <h2 class="contacts_title" data-i18n="footer.questions">For questions and suggestions</h2>
           <a href="mailto:email@shelter.com">
             <div class="mail_block">
               <img src="../assets/footer_svg/mail_svg.svg" width="40" height="26" alt="">
@@ -117,17 +123,17 @@
         </div>
 
         <div class="location_block">
-          <h2 class="visit_title">We are waiting for your visit</h2>
+          <h2 class="visit_title" data-i18n="footer.visit">We are waiting for your visit</h2>
           <a href="https://maps.app.goo.gl/k8AnCoyEEJuYcySH9" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_1">
               <img src="../assets/footer_svg/pin_svg.svg" width="22" height="32" alt="">
-              <span class="pin_text_1">1 Central Street, Boston (entrance from the store)</span>
+              <span class="pin_text_1" data-i18n="footer.address1">1 Central Street, Boston (entrance from the store)</span>
             </div>
           </a>
           <a href="https://maps.app.goo.gl/y2pSQEs3csRpVwq26" target="_blank" rel="noopener noreferrer">
             <div class="pin_block_2">
               <img src="../assets/footer_svg/pin_svg.svg" width="22" height="32" alt="">
-              <span class="pin_text_2">18 South Park, London</span>
+              <span class="pin_text_2" data-i18n="footer.address2">18 South Park, London</span>
             </div>
           </a>
         </div>
@@ -135,6 +141,6 @@
         <img src="../assets/footer_puppy.png" alt="A puppy looking for a home" class="footer_puppy" loading="lazy">
       </div>
     </footer>
-    <script src="shelter_main_2.js" defer></script>
+    <script type="module" src="../src/main.ts"></script>
   </body>
 </html>
