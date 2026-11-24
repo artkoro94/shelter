@@ -39,6 +39,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'theme.light': 'Светлая тема',
     'theme.dark': 'Тёмная тема',
     'language.label': 'Выбрать язык',
+    'menu.open': 'Открыть меню навигации',
+    'menu.close': 'Закрыть меню навигации',
   },
   en: {
     'nav.home': 'Home',
@@ -78,14 +80,32 @@ const translations: Record<Locale, Record<string, string>> = {
     'theme.light': 'Light theme',
     'theme.dark': 'Dark theme',
     'language.label': 'Choose language',
+    'menu.open': 'Open navigation menu',
+    'menu.close': 'Close navigation menu',
   },
 };
 
 const localeKey = 'cozy-house-locale';
 const themeKey = 'cozy-house-theme';
 
+function readPreference(key: string): string | null {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function savePreference(key: string, value: string): void {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Preferences still work for the current page when storage is unavailable.
+  }
+}
+
 function getLocale(): Locale {
-  return localStorage.getItem(localeKey) === 'en' ? 'en' : 'ru';
+  return readPreference(localeKey) === 'en' ? 'en' : 'ru';
 }
 
 function applyLocale(locale: Locale): void {
@@ -102,20 +122,31 @@ function applyLocale(locale: Locale): void {
   document.querySelectorAll<HTMLButtonElement>('[data-locale]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.locale === locale));
   });
-  localStorage.setItem(localeKey, locale);
+  savePreference(localeKey, locale);
+  updatePreferenceLabels(locale);
+}
+
+function updatePreferenceLabels(locale: Locale): void {
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((button) => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    button.setAttribute('aria-label', translations[locale][isDark ? 'theme.light' : 'theme.dark']);
+    button.setAttribute('aria-pressed', String(isDark));
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-menu-toggle]').forEach((button) => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-label', translations[locale][isOpen ? 'menu.close' : 'menu.open']);
+  });
 }
 
 function applyTheme(theme: 'light' | 'dark'): void {
   document.documentElement.dataset.theme = theme;
-  localStorage.setItem(themeKey, theme);
-  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((button) => {
-    button.setAttribute('aria-label', theme === 'dark' ? translations[getLocale()]['theme.light'] : translations[getLocale()]['theme.dark']);
-    button.setAttribute('aria-pressed', String(theme === 'dark'));
-  });
+  savePreference(themeKey, theme);
+  updatePreferenceLabels(getLocale());
 }
 
 export function initPreferences(): void {
-  const savedTheme = localStorage.getItem(themeKey);
+  const savedTheme = readPreference(themeKey);
   const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   applyTheme(savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : preferredTheme);
   applyLocale(getLocale());
