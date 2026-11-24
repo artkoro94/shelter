@@ -814,3 +814,253 @@ a:hover {
     height: 23px;
 }
 
+
+
+/* Responsive layout and accessible interaction states */
+@font-face {
+  font-family: Arial;
+  src: url("../assets/fonts/Arial.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Georgia;
+  src: url("../assets/fonts/Georgia.ttf");
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+}
+
+header,
+main,
+.footer_bg {
+  width: 100%;
+}
+
+.header_container {
+  width: min(100% - 48px, 1200px);
+  height: auto;
+  min-height: 120px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.main_container {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  padding: 80px max(24px, calc((100% - 1200px) / 2)) 60px;
+}
+
+.pets_title {
+  width: min(100%, 500px);
+  height: auto;
+  margin: 0 auto 60px;
+  display: block;
+}
+
+.cards_container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 270px));
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  gap: 30px 40px;
+  margin: 0;
+  overflow: visible;
+}
+
+.card {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 435px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.navigation_pets {
+  margin: 60px auto 0;
+}
+
+.footer_bg {
+  min-height: 350px;
+  height: auto;
+}
+
+.footer_container {
+  width: min(100% - 48px, 1200px);
+  height: auto;
+  min-height: 350px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.burger_menu {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.button_stripe {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #292929;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile_menu {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile_menu.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile_menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile_menu a {
+  color: #fff;
+  font-size: clamp(24px, 6vw, 36px);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 3px solid #d9a982;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+@media (max-width: 1100px) {
+  .cards_container {
+    grid-template-columns: repeat(2, minmax(0, 270px));
+  }
+
+  .footer_container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header_container {
+    min-height: 120px;
+  }
+
+  .nav_menu {
+    display: none;
+  }
+
+  .burger_menu {
+    display: flex;
+  }
+
+  .main_container {
+    padding: 42px 20px 42px;
+  }
+
+  .pets_title {
+    margin-bottom: 42px;
+    font-size: 25px;
+    line-height: 1.3;
+  }
+
+  .cards_container {
+    grid-template-columns: minmax(0, 270px);
+    gap: 30px;
+  }
+
+  .navigation_pets {
+    width: min(100%, 300px);
+    margin-top: 42px;
+  }
+
+  .footer_container {
+    width: min(100% - 40px, 500px);
+    min-height: 0;
+    padding: 40px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts_block,
+  .location_block {
+    max-width: 100%;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_puppy {
+    width: min(100%, 260px);
+    height: auto;
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
