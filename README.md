@@ -1,45 +1,49 @@
 # Cozy House — Pet Shelter
 
-A responsive two-page website for the fictional Cozy House animal shelter. Built with semantic HTML, CSS, and vanilla JavaScript.
+A responsive fictional animal-shelter website. The project is localized for Russian-speaking visitors, with English as an additional language.
+
+## Stack
+
+- Vite
+- TypeScript
+- HTML and CSS
+- ESLint and Prettier
 
 ## Features
-- Responsive landing page and pets catalog
-- Mobile navigation
-- Featured pets carousel
-- Pet cards and catalog pagination UI
-- Shelter information, donation, and contact sections
+
+- Russian and English interface with a persistent language preference
+- Light and dark themes with a persistent theme preference
+- Responsive home page and pet catalog
+- Accessible mobile navigation
+- Featured pets slider
+- Reduced-motion support
 
 ## Getting started
-No build step or package installation is required.
 
-1. Clone the repository.
-2. Open `index.html` in a browser, or serve the project with any static HTTP server.
-3. The home page redirects to `shelter_main_1.html`.
-
-For example, with Node.js installed:
+Requires Node.js 20.19+ or 22.12+.
 
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
 
-## Project structure
+## Scripts
 
-```text
-.
-├── assets/
-├── page_1/
-│   ├── shelter_main_1.css
-│   └── shelter_main_1.js
-├── page_2/
-│   ├── shelter_main_2.css
-│   ├── shelter_main_2.html
-│   └── shelter_main_2.js
-├── index.html
-└── shelter_main_1.html
-```
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Type-check and create a production build |
+| `npm run preview` | Preview the production build |
+| `npm run type-check` | Run TypeScript checks |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format project files |
+| `npm run format:check` | Check formatting |
+| `npm run check` | Run type-check, lint, and build |
 
-## Notes
-This is a static front-end demonstration. Shelter statistics, contact details, addresses, and donation information are illustrative and must be replaced with verified details before production use.
+## Project notes
 
-## License
-No license has been specified yet.
+Cozy House is a fictional shelter. Names, animal statistics, contact details, addresses, donation details, and map links are illustrative placeholders, not real service information. Replace them with verified information before presenting the site as a real shelter.
+
+## Deployment
+
+The Vite base path is configured for the GitHub Pages repository at `/shelter/`.
