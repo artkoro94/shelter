@@ -2,6 +2,7 @@ type Locale = 'ru' | 'en';
 
 const translations: Record<Locale, Record<string, string>> = {
   ru: {
+    'nav.home': 'Главная',
     'nav.about': 'О приюте',
     'nav.pets': 'Наши питомцы',
     'nav.help': 'Как помочь',
@@ -14,6 +15,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'about.p2': 'Мы заботимся о здоровье и комфорте наших подопечных. Нам помогают 87 волонтёров и 28 сотрудников. Каждый день мы делаем всё возможное, чтобы у животных появился любящий дом.',
     'friends.title': 'Наши друзья ищут дом',
     'friends.more': 'Посмотреть всех питомцев',
+    'pet.more': 'Подробнее',
     'help.title': 'Как вы можете помочь приюту',
     'help.food': 'Корм',
     'help.transport': 'Транспорт',
@@ -38,6 +40,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'language.label': 'Выбрать язык',
   },
   en: {
+    'nav.home': 'Home',
     'nav.about': 'About the shelter',
     'nav.pets': 'Our pets',
     'nav.help': 'Help the shelter',
@@ -50,6 +53,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'about.p2': 'We care about the health and comfort of our animals. We are supported by 87 volunteers and 28 employees. Every day, we do our best to help pets find a loving home.',
     'friends.title': 'Our friends are looking for a home',
     'friends.more': 'Meet all our pets',
+    'pet.more': 'Learn more',
     'help.title': 'How you can help our shelter',
     'help.food': 'Pet food',
     'help.transport': 'Transportation',
