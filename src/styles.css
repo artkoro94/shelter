@@ -150,7 +150,7 @@ body > header:not(.header_bg) { background: var(--surface-raised); border-bottom
 .donation_title { margin-bottom: 18px; }
 .donation_subtitle { margin-bottom: 14px; color: var(--muted); font-size: 14px; }
 .donation_card_info2 { display: inline-flex; align-items: center; gap: 14px; padding: 14px 18px; border: 1px solid rgb(35 77 60 / 12%); border-radius: 12px; background: var(--green); color: #fff; }
-.card_img { width: 34px; height: 24px; background: url('../assets/credit-card.svg') center / contain no-repeat; }
+.card_img { width: 34px; height: 24px; border: 1px solid rgb(255 255 255 / 75%); border-radius: 5px; background: linear-gradient(135deg, transparent 0 44%, rgb(255 255 255 / 55%) 45% 55%, transparent 56%), linear-gradient(90deg, rgb(255 255 255 / 45%) 0 42%, transparent 42%); }
 .card_number { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .07em; }
 .legal_info { margin: 18px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
 .footer_bg { position: relative; overflow: hidden; padding: 68px 32px 0; background: var(--green-deep); color: #f7f5ef; }
