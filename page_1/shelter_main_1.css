@@ -1612,3 +1612,46 @@ a:hover {
     }
 }
 
+
+
+/* Accessibility and responsive interaction refinements */
+:focus-visible {
+  outline: 3px solid #d9a982;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.mobile_menu {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobile_menu.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile_menu a {
+    font-size: clamp(2rem, 8vw, 3.25rem);
+  }
+
+  .mobile_menu ul {
+    gap: clamp(1rem, 5vh, 2.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
